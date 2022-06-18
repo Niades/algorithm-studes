@@ -9,6 +9,10 @@ How to run it?
 2. Binary Search: `make run-bs`
 3. Depth First Search `make run-dfs`
 
+How to test it?
+-------------------
+1. Breadth First Search: `make run test-bfs`
+
 Environment
 ----------------------
 Python 3.9.10
