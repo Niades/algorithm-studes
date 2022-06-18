@@ -7,7 +7,7 @@ How to run it?
 ---------------------
 1. Breadth First Search: `make run-bfs`
 2. Binary Search: `make run-bs`
-3. Depth First Serach `make run-dfs`
+3. Depth First Search `make run-dfs`
 
 Environment
 ----------------------

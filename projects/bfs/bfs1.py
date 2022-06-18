@@ -36,16 +36,6 @@ def findNodeByText(tree, text):
         nodesToVisit.reverse()
     return None
 
-
-SMALL_TREE = Node("1",[
-        Node("2", [], "breadther"),
-        Node("3"),
-        Node("4", [
-            Node("5"),
-            Node("2", [], "deeper")
-        ])
-    ])
-
 def main():
     foundNode = findNodeByText(SMALL_TREE, "2")
     print(f'Found node: {repr(foundNode)}')
