@@ -3,6 +3,10 @@ What this project is?
 I try to solve typical algorithmical challenges in Python.
 My dream is to land an Amazon job.
 
+How to set up?
+-----------------------
+`make prepare` will set up git pre-commit hook with tests
+
 How to run it?
 ---------------------
 1. Breadth First Search: `make run-bfs`

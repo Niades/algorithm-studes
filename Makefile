@@ -1,3 +1,5 @@
+prepare:
+	cp .git-hooks/* .git/hooks/
 run-bs:
 	python3 ./projects/binary-search/binary-search-1.py
 run-dfs:
