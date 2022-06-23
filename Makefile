@@ -8,3 +8,12 @@ run-bfs:
 	python3 ./projects/bfs/bfs-1.py
 test-bfs:
 	cd ./projects/bfs && python3 -m unittest test
+test-all:
+	for PROJECT in *;    												  \
+	do                    												  \
+		for ALGO in *;   												  \
+		do			     												  \
+			cd ./projects/$($$PROJECT)/$($$ALGO);						  \
+			pwd;									   					  \
+		done;		     												  \
+	done;			     												  \
