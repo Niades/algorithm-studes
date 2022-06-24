@@ -1,20 +1,30 @@
 import math
 
+def isNumberPrime(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+
 def sieveOfEratosphenes(n):
     sieve = list(map(lambda n: [n, None], list(range(2, math.ceil(math.sqrt(n))))))
     sieve[0][1] = True
     resultPrimes = [sieve[0][0]]
     
-
-
-
-
-
-
-
-
-
+    '''
+    # Debug part
+    # ==========
+    #
     # Note: So I have fucked up a start condition
+    sieve = [1, True], [2, None]
+    shitEndingCondition = map(lambda n:
+                        not (
+                            n[1] is  True
+                                or
+                            n[1] is  None
+                        ),
+                    sieve
+                )
     shitList = list(
             filter(
                 lambda n: (
@@ -35,12 +45,12 @@ def sieveOfEratosphenes(n):
                     # no items in the `sieve` with `[_, None]`,
                     # All the items should be marked either 
                     # `False` or `True`.
-                        and
+                        ^
                     (
                         not (
                             n[1] is  True
                                 or
-                            n[1] is  False
+                            n[1] is  None
                         )
                     )),
                 sieve
@@ -49,28 +59,10 @@ def sieveOfEratosphenes(n):
     shitLen = len(shitList)
     print("shitList =", shitList)
     print("shitLen =", shitLen)
+    print("endingCondition:", shitEndingCondition)
+    '''
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # DEBUGGING `False`
     while False and len(
         list(
             filter(
@@ -136,8 +128,21 @@ def sieveOfEratosphenes(n):
 
     return resultPrimes
 
+MAX_NUMBER = 1000
+MAX_PRIMES = 100
+CORRECT_ANSWER = 24133
+
+def getSumOfFirst100Numbers():
+    primes = []
+    for i in range(2, MAX_NUMBER):
+        if isNumberPrime(i):
+            primes.append(i)
+            if len(primes) >= MAX_PRIMES:
+                break
+    print(primes)
+    return sum(primes)
 
 def main():
-    print(sieveOfEratosphenes(10));
-
+    assert getSumOfFirst100Numbers() == CORRECT_ANSWER
+    print("All assertions passed")
 main()
