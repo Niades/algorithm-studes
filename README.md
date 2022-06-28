@@ -1,7 +1,7 @@
 What this project is?
 ---------------------
 I try to solve typical algorithmical challenges in Python.
-My dream is to land an Amazon job.
+My dream is to land an FAANG job.
 
 How to set up?
 -----------------------
