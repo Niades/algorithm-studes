@@ -4,11 +4,27 @@ interface Item {
   value: number,
 };
 
-// O(n)
+// O(n) (not confirmed, my estimate)
+// Algorithm: Top-down DP
+/*
+  The approach here is just something that popped into my head.
+  I have no idea what kind of pattern of algorithm is applicable (if
+  applicable to this).
+
+  Let me try to figure it out.
+
+  I have written some comments in the code. It seems like I apply DP
+  patterns here. Top-down DP.
+
+*/
+
 
 function solveKnapsack(profits: number[], weights: number[], capacity: number): number {
+  // Main problem optimal result
   const knapsack: Item[] = [];
+  // Subproblems
   profits.forEach((profit, i) => {
+    // Subproblem
     const weight = weights[i];
     const value = profit / weight;
     const item: Item = {
@@ -24,9 +40,11 @@ function solveKnapsack(profits: number[], weights: number[], capacity: number): 
       knapsack.unshift(item);
     }
   });
+  // Collecting all the subproblem optimal results
+  // to calculate optimal result
   let result = 0,
       currentCapacity = 0;
-  knapsack.forEach((item: Item, i: number) => {
+  knapsack.forEach((item: Item) => {
     if(currentCapacity > capacity) {
       return false;
     }
@@ -36,6 +54,7 @@ function solveKnapsack(profits: number[], weights: number[], capacity: number): 
     }
     return true;
   });
+  // Returning solution to the top problem
   return result;
 }
 
