@@ -1,3 +1,6 @@
+cd:
+	cd src/$(p)
+
 prepare:
 	cp .git-hooks/* .git/hooks/
 run-bs:
